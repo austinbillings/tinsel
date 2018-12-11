@@ -1,11 +1,11 @@
-import { isObject, splitBy } from './utils';
+import { isObject, splitBy, stripComments } from './utils';
 import { isValidTCSSPropertyListString, isValidTCSSDocument } from './validation';
 
 export function parseStylePropertyList (propertyList) {
   if (!isValidTCSSPropertyListString(propertyList))
     throw new TypeError(`propertyList <string> parsed is improperly formatted: ${propertyList}`)
 
-  const properties = splitBy(propertyList, ';')
+  const properties = splitBy(stripComments(propertyList), ';')
     .map(property => {
       const [ name, value ] = splitBy(property, ':');
       return { name, value };
@@ -18,7 +18,7 @@ export function parseStylesheetDocument (stylesheet) {
   if (!isValidTCSSDocument(stylesheet))
     throw new TypeError(`stylesheet <string> parsed is improperly formatted: ${stylesheet}`);
 
-  return splitBy(stylesheet, '}')
+  return splitBy(stripComments(stylesheet), '}')
     .map(section => {
       const [ selectorsText, propertiesText ] = splitBy(section, '{');
 

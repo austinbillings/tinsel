@@ -46,9 +46,15 @@ const wrapped = connectStyle((context, theme) => `
     transition: color 250ms;
   }
 
+  // here's a comment
   altTitle {
     color: ${theme.colors[context.widerThan(1100) ? 'red' : 'white']};
   }
+
+  /* and a multiline comment as well
+
+            lol
+  */
 
   copy {
     transition: transform 0.5s;

@@ -1,18 +1,18 @@
 import { parseStylesheetDocument } from './parsers';
 import { VALIDATION_PATTERNS as patterns } from './constants';
-import { isString, isNumber, isObject, isFunction, stringify, trim } from './utils';
+import { isString, isNumber, isObject, isFunction, stringify, trim, stripComments } from './utils';
 
 // TCSS Validators ===========================================================|
 
 export function isValidTCSSDocument (value) {
   return isString(value)
-    && patterns.TCSS_DOCUMENT.test(trim(value));
+    && patterns.TCSS_DOCUMENT.test(trim(stripComments(value)));
 }
 
 export function isValidTCSSObject (value) {
   return isObject(value)
-    && Object.keys(value).map(trim).every(isValidTCSSSelector)
-    && Object.values(value).map(trim).every(isValidTCSSPropertyList);
+    && Object.keys(value).every(isValidTCSSSelector)
+    && Object.values(value).every(isValidTCSSPropertyList);
 }
 
 export function isValidTCSSSelector (value) {
@@ -28,7 +28,7 @@ export function isValidTCSSPropertyList (value) {
 
 export function isValidTCSSPropertyListString (value) {
   return isString(value)
-    && patterns.TCSS_PROPERTY_LIST.test(trim(value));
+    && patterns.TCSS_PROPERTY_LIST.test(trim(stripComments(value)));
 }
 
 export function isValidTCSSPropertyName (value) {

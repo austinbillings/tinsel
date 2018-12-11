@@ -8,6 +8,12 @@ export const INTERACTION_EVENTS = [
   'mouseenter'
 ];
 
+export const COMMENT_PATTERNS = {
+  QUOTED_TEXT: /('[^\'\n\r]*')|("[^\"\n\r]*")/,
+  SINGLE_LINE: /(\/\/[^\n\r]*)/,
+  MULTI_LINE: /(\/\*[!-√\s]+?(?:\*\/))/
+};
+
 export const VALIDATION_PATTERNS = {
   TCSS_DOCUMENT: /^\s*(?:([a-zA-Z_][a-zA-Z0-9_]*)(?:,\s*[a-zA-Z_][a-zA-Z0-9_]*)*\s*{(?:\s*[a-z][a-zA-Z-]+:\s*[a-zA-Z0-9@#%()".,_-\s]+;)+\s*}\s*)+\s*$/,
   TCSS_SELECTOR: /^([a-zA-Z_][a-zA-Z0-9]*)$/,
