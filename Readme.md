@@ -39,7 +39,7 @@ An event-listener loop informs the `context`, which you can use to create powerf
 
 Some quick points:
 - `context.is(selector, condition)` uses the native & super-fast '.matches' DOM element API under the hood.
-- `connectStyle()`` returns a component-wrapper function that passes down the following objects, keyed by your own-determined selectors, that you can easily spread to your component children.
+- `connectStyle()` returns a component-wrapper function that passes down the following objects, keyed by your own-determined selectors, that you can easily spread to your component children.
   - `styles`: where each value is a set of inline-styles ready to be applied.
   - `styledRefs`: where each value is a function that adopts an element's ref and uses it to determine whether an element is being hovered, or is active, etc.
   - `styledRefWrappers`: where each value is a function that adopts the element's ref _and_ passes the ref to a function given as an argument. For instance:
