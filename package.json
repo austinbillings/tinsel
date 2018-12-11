@@ -1,0 +1,39 @@
+{
+  "name": "tinsel",
+  "version": "0.0.2",
+  "description": "Reactive styled components, using a context & theme paradigm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "react-style",
+    "styled components",
+    "css",
+    "tcss"
+  ],
+  "author": "Austin <ab@austinbillings.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.6.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
+    "mansion-ui": "^2.5.3",
+    "node-sass": "^4.11.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
